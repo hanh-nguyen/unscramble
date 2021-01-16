@@ -95,7 +95,7 @@ for call in calls:
     if isBangalore(receiving):
       receiveBangalore += 1
 
-print(f"{receiveBangalore/callBangalore:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+print(f"{receiveBangalore/callBangalore*100:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
 
 """
 Runtime: O(n)
