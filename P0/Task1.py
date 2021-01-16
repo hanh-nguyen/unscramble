@@ -17,14 +17,13 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
-phonelist = []
-for text in texts:
-    phonelist += text[:2]
-for call in calls:
-    phonelist += call[:2]
-n = len(set(phonelist))
-print(f"There are {n} different telephone numbers in the records.")
+phonelist = set()
+for text, call in zip(texts, calls):
+    phonelist = phonelist.union(text[:2])
+    phonelist = phonelist.union(call[:2])
+print(f"There are {len(phonelist)} different telephone numbers in the records.")
 
 """
+Answer: There are 570 different telephone numbers in the records.
 Runtime: O(n)
 """
