@@ -1,6 +1,40 @@
-Runtime
-Task 0: O(1)
-Task 1: O(n)
-Task 2: O(n)
-Task 3: O(n)
-Task 4: O(n)
+- Task 0
+Worst case complexity: O(1)
+Algorithm:
+use indices to get items from calls and texts: O(1)
+
+- Task 1
+Worst case complexity: O(n)
+Algorithm:
+initialize an empty list: O(1)
+traverse calls and texts to update the set: O(n)
+get the length of the set: O(1)
+
+- Task 2
+Worst case complexity: O(n)
+Algorithm:
+initialize an empty dictionary: O(1)
+loop through calls, for each element update the dictionary: O(n * 1) = O(n)
+get the longest time from the dictionary: O(n)
+look up the corresponding phone number: O(1)
+
+- Task 3 - Part A
+Worst case complexity: O(n log n)
+Algorithm:
+set up an empty set: O(1)
+loop through calls, for each element update the set: O(n * 1) = O(n)
+sort the set and loop through it: O(n log n) + O(n) = O(n log n)
+
+- Task 3 - Part B
+Worst case complexity: O(n)
+Algorithm:
+loop through the calls, for each element update the values: O(n)
+calculate the percent of calls: O(1)
+
+- Task 4
+Worst case complexity: O(n log n)
+Algorithm:
+initialize two empty sets: O(1)
+loop through calls and texts, for each element update the sets: O(n * 1) = O(n)
+get the difference between two sets: O(1)
+sort the set and loop through it: O(n log n) + O(n) = O(n log n)
