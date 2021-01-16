@@ -71,17 +71,15 @@ def getAreaCode(num):
 def isBangalore(num: str):
   return num[:5] == '(080)'
 
-codes = []
+codes = set()
 for call in calls:
   calling = call[0]
   if isBangalore(calling):
     receiving = call[1]
-    codes.append(getAreaCode(receiving))
+    codes.add(getAreaCode(receiving))
 
-uniquecodes = list(set(codes))
-uniquecodes.sort()
 print("The numbers called by people in Bangalore have codes:")
-for code in uniquecodes:
+for code in sorted(codes):
   print(code)
 
 # Part B

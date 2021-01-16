@@ -24,19 +24,16 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-outgoingcalls = []
-others = []
-for call in calls:
-    outgoingcalls.append(call[0])
-    others.append(call[1])
+outgoingcalls = set()
+others = set()
+for call, text in zip(calls, texts):
+    outgoingcalls.add(call[0])
+    others.add(call[1])
+    others = others.union(text[:2])
 
-for text in texts:
-    others += text[:2]
-
-telemarketers = list(set(outgoingcalls) - set(others))
-telemarketers.sort()
+telemarketers = outgoingcalls - others
 print("These numbers could be telemarketers: ")
-for t in telemarketers:
+for t in sorted(telemarketers):
     print(t)
 
 """
