@@ -23,24 +23,16 @@ for call in calls:
     calling = call[0]
     receiving = call[1]
     time = int(call[-1])
-    if not callrecord.get(calling):
-        callrecord[calling] = time
-    else:
-        callrecord[calling] += time
-    if not callrecord.get(receiving):
-        callrecord[receiving] = time
-    else:
-        callrecord[receiving] += time    
+    callrecord[calling] = callrecord.get(calling, 0) + time
+    callrecord[receiving] = callrecord.get(receiving, 0) + time   
 
-longest_time = 0
-for number, time in callrecord.items():
-    if time > longest_time:
-        longest_time = time
-        longest_number = number
+longest_number = max(callrecord, key=callrecord.get)
+longest_time = callrecord[longest_number]
 
 print(f"{longest_number} spent the longest time, {longest_time} seconds, on the phone during September 2016.")
 
 
 """
+Answer: (080)33251027 spent the longest time, 90456 seconds, on the phone during September 2016.
 Runtime: O(n)
 """
